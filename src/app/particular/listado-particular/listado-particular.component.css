@@ -1,0 +1,18 @@
+table {
+    width: 100%;
+}
+
+button {
+    margin: .5rem;
+}
+
+td.mat-cell {
+    max-width: 20rem;
+    padding: .5rem;
+    text-align: center;
+}
+
+th.mat-header-cell {
+    text-align: center;
+    font-size: 1rem;
+}

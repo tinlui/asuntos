@@ -3,14 +3,39 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MaterialModule} from './material/material.module';
+import { ListadoMinutarioComponent } from './minutario/listado-minutario/listado-minutario.component';
+import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
+import { MenuComponent } from './menu/menu.component';
+import { ListadoAsuntoComponent } from './asunto/listado-asunto/listado-asunto.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AsuntosComponent } from './asunto/asuntos/asuntos.component';
+import { ListadoParticularComponent } from './particular/listado-particular/listado-particular.component';
+import { ParticularComponent } from './particular/particular/particular.component';
+import { CapturaComponent } from './utilidades/captura/captura.component';
+import { CrearAsuntoComponent } from './asunto/crear-asunto/crear-asunto.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListadoMinutarioComponent,
+    ListadoGenericoComponent,
+    MenuComponent,
+    ListadoAsuntoComponent,
+    LandingPageComponent,
+    AsuntosComponent,
+    ListadoParticularComponent,
+    ParticularComponent,
+    CapturaComponent,
+    CrearAsuntoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
