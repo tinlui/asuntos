@@ -15,7 +15,7 @@
                 <th mat-header-cell *matHeaderCellDef> Opciones</th>
                 <td mat-cell *matCellDef="let element">
                     <button mat-raised-button color="primary">Turnar</button>
-                    <button mat-raised-button color="primary">Reinscribir</button>
+                    <button mat-raised-button (click)="editarDialog(element.id)" color="primary">Reinscribir</button>
                 </td>
             </ng-container>
             <ng-container matColumnDef="archivar">

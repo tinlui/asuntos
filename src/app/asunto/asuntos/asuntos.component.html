@@ -1,9 +1,20 @@
 <h2>Oficios</h2>
+
 <ng-container>
-    <button mat-raised-button (click)="openDialog()">Nuevo</button>
-    <button mat-raised-button>Consultar</button>
-    <button mat-raised-button>Reportes</button>
-    <button mat-raised-button>Contactos</button>
-    <button mat-raised-button>Carpetas</button>
+    <table>
+        <tr>
+            <td> <button mat-raised-button (click)="openDialog()">Nuevo</button></td>
+            <td> <button mat-raised-button>Reportes</button></td>
+            <td><button mat-raised-button (click)="consultaAsunto()">Consultar</button></td>
+        </tr>
+        <tr>
+            <td> <button mat-raised-button>Contactos</button></td>
+            <td><button mat-raised-button>Carpetas</button></td>
+            <td> </td>
+        </tr>
+    </table>
+    <app-consultar-asunto [consultarAsuntos]="[asuntos]" *ngIf="consulta" class="consulta"></app-consultar-asunto>
+
 </ng-container>
+
 <app-listado-asunto [asuntos]="asuntos"></app-listado-asunto>

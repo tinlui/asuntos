@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { asuntoCreacionDTO } from '../asunto';
+import { MatDialogRef } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-crear-asunto',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearAsuntoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,public dialogRef: MatDialogRef<CrearAsuntoComponent> ) { }
 
   ngOnInit(): void {
   }
-
+  guardarAsuntos(asunto: asuntoCreacionDTO){
+    console.log(asunto)
+    this.router.navigate(['/asuntos'])
+    this.dialogRef.close();
+  }
 }

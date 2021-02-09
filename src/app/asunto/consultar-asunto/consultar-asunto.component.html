@@ -1,0 +1,76 @@
+<form [formGroup]="formularios">
+    <mat-horizontal-stepper #stepper>
+        <mat-step>
+            <ng-template matStepLabel>Numero de Documento</ng-template>
+            <mat-form-field>
+                <mat-label>No. Documento</mat-label>
+                <input matInput placeholder="SIDUM/00/2021" formControlName="noOficio" required [matAutocomplete]="auto">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Fechas</ng-template>
+            <mat-form-field>
+                <mat-label>Recepcion</mat-label>
+                <input matInput [matDatepicker]="recepcion" formControlName="Recepcion">
+                <mat-datepicker-toggle matSuffix [for]="recepcion"></mat-datepicker-toggle>
+                <mat-datepicker #recepcion></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="separacion">
+                <mat-label>Documento</mat-label>
+                <input matInput [matDatepicker]="documento" formControlName="Documento">
+                <mat-datepicker-toggle matSuffix [for]="documento"></mat-datepicker-toggle>
+                <mat-datepicker #documento></mat-datepicker>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Anterior</button>
+                <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Remitente</ng-template>
+            <mat-form-field>
+                <mat-label>Dirigido</mat-label>
+                <input matInput formControlName="Dirigido" placeholder="dirigido/ enviado">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Enviado</mat-label>
+                <input matInput formControlName="Enviado" placeholder="dirigido/ enviado">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Anterior</button>
+                <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Descripcion</ng-template>
+            <mat-form-field>
+                <mat-label>Asunto</mat-label>
+                <input matInput formControlName="Asunto" placeholder="Asunto/Observaciones">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Observaciones</mat-label>
+                <input matInput formControlName="Observaciones" placeholder="Asunto/Observaciones">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Anterior</button>
+                <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Terminar</ng-template>
+            <p>You are now done.</p>
+            <div>
+                <button mat-button matStepperPrevious>Anterior</button>
+                <button mat-button (click)="stepper.reset()">Ocultar</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</form>

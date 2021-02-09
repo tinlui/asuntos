@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from '@angular/forms'
 
 import {MaterialModule} from './material/material.module';
 import { ListadoMinutarioComponent } from './minutario/listado-minutario/listado-minutario.component';
@@ -15,7 +16,9 @@ import { AsuntosComponent } from './asunto/asuntos/asuntos.component';
 import { ListadoParticularComponent } from './particular/listado-particular/listado-particular.component';
 import { ParticularComponent } from './particular/particular/particular.component';
 import { CapturaComponent } from './utilidades/captura/captura.component';
-import { CrearAsuntoComponent } from './asunto/crear-asunto/crear-asunto.component'
+import { CrearAsuntoComponent } from './asunto/crear-asunto/crear-asunto.component';
+import { EditarAsuntoComponent } from './asunto/editar-asunto/editar-asunto.component';
+import { ConsultarAsuntoComponent } from './asunto/consultar-asunto/consultar-asunto.component'
 
 @NgModule({
   declarations: [
@@ -29,13 +32,16 @@ import { CrearAsuntoComponent } from './asunto/crear-asunto/crear-asunto.compone
     ListadoParticularComponent,
     ParticularComponent,
     CapturaComponent,
-    CrearAsuntoComponent
+    CrearAsuntoComponent,
+    EditarAsuntoComponent,
+    ConsultarAsuntoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
-Crear
-<app-captura (submit)="guardarAsuntos($event)">
+Editar
+<app-captura (submit)="guardarAsuntos($event)" [modelo]="modelo">
     <ng-container>
         <ng-content select="[titulo]"></ng-content>
     </ng-container>
