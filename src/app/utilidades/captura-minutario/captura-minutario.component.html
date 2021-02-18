@@ -1,0 +1,47 @@
+<h2 titulo mat-dialog-title>Minutario</h2>
+
+<form [formGroup]="form" (submit)='guardarMinutario()' mat-dialog-content campos>
+    <p>
+        <mat-form-field class="textarea">
+            <mat-label>Oficio</mat-label>
+            <input formControlName="oficio" matInput placeholder="No. Oficio">
+            <mat-hint>SEIN/DS/00/0000</mat-hint>
+            <mat-error></mat-error>
+        </mat-form-field>
+    </p>
+    <p>Fecha</p>
+    <p>
+        <mat-form-field class="textarea">
+            <mat-label>Asunto</mat-label>
+            <textarea formControlName="asunto" matInput></textarea>
+            <mat-error></mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="textarea">
+            <mat-label>Dirigido</mat-label>
+            <mat-select>
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+            </mat-select>
+            <mat-error></mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="textarea">
+            <mat-label>Solicita</mat-label>
+            <mat-select>
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+            </mat-select>
+
+            <mat-error></mat-error>
+        </mat-form-field>
+    </p>
+    <div class="botones">
+        <button mat-raised-button color="primary" [disabled]="form.invalid">
+            Guardar Cambios
+        </button>
+        <button mat-raised-button color="warn">Cancelar</button>
+    </div>
+</form>

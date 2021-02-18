@@ -15,7 +15,7 @@ export class CrearAsuntoComponent implements OnInit {
   ngOnInit(): void {
   }
   guardarAsuntos(asunto: asuntoCreacionDTO){
-    console.log(asunto)
+    console.log(asunto )
     this.router.navigate(['/asuntos'])
     this.dialogRef.close();
   }

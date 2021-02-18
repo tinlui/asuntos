@@ -11,7 +11,7 @@ import { asuntoCreacionDTO } from '../asunto';
 export class EditarAsuntoComponent implements OnInit {
 
   constructor(private router: Router,private activatedRoute:ActivatedRoute,public dialogRef: MatDialogRef<EditarAsuntoComponent> ) { }
-  modelo: asuntoCreacionDTO = {noOficio:'sidum/245/2021'}
+  //modelo: asuntoCreacionDTO = {noOficio:'sidum/245/2021'}
   ngOnInit(): void {
   /*   this.activatedRoute.params.subscribe( params=> {
       alert(params.id);

@@ -1,11 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+import {  animate,  state,  style,  transition,  trigger,} from '@angular/animations';
 import { MatDialog } from '@angular/material/dialog';
 import { EditarAsuntoComponent } from '../editar-asunto/editar-asunto.component';
 
@@ -34,26 +28,19 @@ export class ListadoAsuntoComponent implements OnInit {
     this.dialog.open(EditarAsuntoComponent, { data: { id } });
   }
   expandedElement: String[] = [
-    'fOficio',
-    'fRecibido',
-    'nombreDirigido',
-    'puestoDirigido',
-    'dependiciaDirigido',
-    'nombreEnviado',
-    'puestoEnviado',
-    'dependenciaEnviado',
-    'noDespacho',
-    'segDespacho',
-    'estDespacho',
+    'fecha_documento',
+    'fecha_recepcion',
+    'observaciones',
+    'original',
+    'copia',
   ];
   displayColumns: String[] = [
-    'noOficio',
+    'no_docto_original',
     'opciones',
-    'archivar',
-    'pdf',
-    'cargaArchivo',
-    'nombreDirigido',
-    'nombreEnviado',
+    'archivo_digital',
+    'dirigido_a',
+    'enviadio_por',
+    'asunto',
     'detalle',
   ];
   ngOnInit(): void {}

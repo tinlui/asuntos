@@ -30,9 +30,9 @@
     <p>
         <mat-form-field class="textarea">
             <mat-label>Dirigido a:</mat-label>
-            <mat-select>
-                <mat-option value="one">First option</mat-option>
-                <mat-option value="two">Second option</mat-option>
+            <mat-select formControlName="nombreDirigido" name="dirigido">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let list of listDirigidos" [value]="list.id_contacto">{{list.nombre}}</mat-option>
             </mat-select>
         </mat-form-field>
     </p>

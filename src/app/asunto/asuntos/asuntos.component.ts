@@ -17,7 +17,7 @@ import { CrearAsuntoComponent } from '../crear-asunto/crear-asunto.component';
 })
 export class AsuntosComponent implements OnInit {
   consulta = false;
-
+  
   constructor(public dialog: MatDialog, private _formBuilder: FormBuilder) {}
 
   openDialog() {
@@ -28,55 +28,65 @@ export class AsuntosComponent implements OnInit {
   consultaAsunto() {
     this.consulta = true;
   }
-
+  filtroListado(event) {
+    this.asuntos=event
+     
+  }
   ngOnInit(): void {
     this.asuntos = [
       {
-        id: 0,
-        noOficio: 's/n fiscalia gral. del estado',
-        archivar: 'asunto',
-        cargaArchivo: 'archivo',
-        pdf: 'link de pdf',
-        fRecibido: new Date(),
-        fOficio: new Date(),
-        tituloDirigido: 'ing',
-        nombreDirigido: 'Gerardo Alberto Berlanga Gotes',
-        puestoDirigido:
-          'Secretario de infraestructura, desarrollo urbano y movilidad',
-        dependiciaDirigido:
-          'Secretaria de infraestructura, desarrollo urbano y movilidad',
-        tituloEnviado: 'Lic',
-        nombreEnviado: 'Monica del carmen flores almaraz',
-        puestoEnviado:
-          'Agente del ministerio publico de la fiscalia de investigaciones especializadas, atencion',
-        dependenciaEnviado: 'Fiscalia general del estado',
-        noDespacho: null,
-        segDespacho: null,
-        estDespacho: null,
-        archivadaEn: 'sin archivar',
+        no_identificacion: 33043,
+        no_docto_original: 'SEFIN/050/2021',
+        fecha_recepcion:new Date('2021-02-10') ,
+        fecha_documento: new Date('2021-02-09'),
+        dirigido_a: 3963,
+        enviadio_por: 3088,
+        asunto:
+          'EN RELACION AL PROYECTO DENOMINADO "BRT CORRERDOR...',
+        observaciones: '',
+        original: 1,
+        copia: 0,
+       no_oficio_turnar:null,
+       fecha_tunrnar:null,
+       turnado_a:null,
+        firmado_por:null,
+        instruccion:null,
+        contestado:null,
+        fecha_revision:null,
+        fecha_contestacion:null,
+        concluido:null,
+        titular:null,
+        ccp:null,
+        archivado_en:null,
+        archivo_digital: '33O43.pdf',
+        idAdministracion:null
       },
       {
-        id: 1,
-        noOficio: 'sidum/caoc/002/2021',
-        archivar: 'asunto',
-        cargaArchivo: 'archivo',
-        pdf: 'link de pdf',
-        fRecibido: new Date(),
-        fOficio: new Date(),
-        dirigido: 'ing',
-        nombre: 'Alejandro Juan Antonio Prieto Garcia',
-        puesto: 'SubSecretario de infraestructura de obra publica',
-        dependicia:
-          'Secretaria de infraestructura, desarrollo urbano y movilidad',
-        enviadoTitulo: 'Lic',
-        nombreEnviado: 'Ivan Murua Beltran Enriquez',
-        puestoEnviado: 'Coordinador de Atencion a organos de control',
-        dependenciaEnviado:
-          'Secretaria de infraestructura, desarrollo urbano y movilidad',
-        noDespacho: null,
-        segDespacho: null,
-        estDespacho: null,
-        archivadaEn: 'sin archivar',
+        no_identificacion: 33044,
+        no_docto_original: 'CEAS-DG-DD/0042/2021',
+        fecha_recepcion:new Date('2021-02-10') ,
+        fecha_documento: new Date('2021-02-10'),
+        dirigido_a: 3963,
+        enviadio_por: 3451,
+        asunto:
+          'INFORMA QUE SE LLEVARA A CABO LA SESION EXTRARORIDNARIA...',
+        observaciones: '',
+        original: 1,
+        copia: 0,
+       no_oficio_turnar:62,
+       fecha_turnar:new Date('2021-02-10'),
+       turnado_a:3131,
+        firmado_por:3389,
+        instruccion:'FAVOR DE COORDINARSE CON EL ING. ALEJANDRO JUAN AN...',
+        contestado:0,
+        fecha_revision:new Date('2021-02-10'),
+        fecha_contestacion:new Date('2021-02-10'),
+        concluido:null,
+        titular:null,
+        ccp:null,
+        archivado_en:null,
+        archivo_digital: '3304.pdf',
+        idAdministracion:2017
       },
     ];
   }

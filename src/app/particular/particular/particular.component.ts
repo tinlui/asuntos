@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CapturaMinutarioComponent } from 'src/app/utilidades/captura-minutario/captura-minutario.component';
+
 
 @Component({
   selector: 'app-particular',
@@ -6,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./particular.component.css']
 })
 export class ParticularComponent implements OnInit {
+  consulta = false;
+  btnConsultar=true;
+  btnCerrar=false;
+  constructor(public dialog: MatDialog) { }
 
-  constructor() { }
-
+  openDialog() {
+    this.dialog.open(CapturaMinutarioComponent);
+  }
   ngOnInit(): void {
     this.minutarioSecretarioParticular= [{
       opciones: 'modificar/eliminar',
@@ -27,4 +35,16 @@ export class ParticularComponent implements OnInit {
     }]
   }
   minutarioSecretarioParticular;
+
+  //Boton para mostrar el panel de consulta
+  consultaAsunto() {
+    this.consulta = true;
+    this.btnCerrar=true;
+    this.btnConsultar=false;
+  }
+  botonesConsulta(){
+    this.consulta = false;
+    this.btnConsultar=true;
+  this.btnCerrar=false;
+  }
 }

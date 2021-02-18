@@ -13,7 +13,7 @@
             <td> </td>
         </tr>
     </table>
-    <app-consultar-asunto [consultarAsuntos]="[asuntos]" *ngIf="consulta" class="consulta"></app-consultar-asunto>
+    <app-consultar-asunto (filtrarAsuntos)='filtroListado($event)' [consultarAsuntos]="[asuntos]" *ngIf="consulta" class="consulta"></app-consultar-asunto>
 
 </ng-container>
 

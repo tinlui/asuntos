@@ -1,4 +1,6 @@
 import { Component,  OnInit , Input} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CapturaMinutarioComponent } from '../utilidades/captura-minutario/captura-minutario.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -6,12 +8,16 @@ import { Component,  OnInit , Input} from '@angular/core';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+  consulta = false;
+  btnConsultar=true;
+  btnCerrar=false;
 
-
-  constructor() {
+  constructor(public dialog: MatDialog) {
    
    }
-  
+   openDialog() {
+    this.dialog.open(CapturaMinutarioComponent);
+  }
   title = 'recepcion-documentos';
   ngOnInit(): void {
     this.minutarioSecretario = [{
@@ -31,4 +37,14 @@ export class LandingPageComponent implements OnInit {
     }]
   }
   minutarioSecretario;
+  consultaAsunto() {
+    this.consulta = true;
+    this.btnCerrar=true;
+    this.btnConsultar=false;
+  }
+  botonesConsulta(){
+    this.consulta = false;
+    this.btnConsultar=true;
+  this.btnCerrar=false;
+  }
 }

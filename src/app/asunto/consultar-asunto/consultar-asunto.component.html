@@ -4,8 +4,8 @@
             <ng-template matStepLabel>Numero de Documento</ng-template>
             <mat-form-field>
                 <mat-label>No. Documento</mat-label>
-                <input matInput placeholder="SIDUM/00/2021" formControlName="noOficio" required [matAutocomplete]="auto">
-                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <input matInput placeholder="SIDUM/00/2021" formControlName="no_docto_original" [matAutocomplete]="oficio">
+                <mat-autocomplete autoActiveFirstOption #oficio="matAutocomplete">
                     <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                         {{option}}
                     </mat-option>
@@ -19,15 +19,15 @@
             <ng-template matStepLabel>Fechas</ng-template>
             <mat-form-field>
                 <mat-label>Recepcion</mat-label>
-                <input matInput [matDatepicker]="recepcion" formControlName="Recepcion">
-                <mat-datepicker-toggle matSuffix [for]="recepcion"></mat-datepicker-toggle>
-                <mat-datepicker #recepcion></mat-datepicker>
+                <input matInput [matDatepicker]="fecha_recepcion" formControlName="fecha_recepcion">
+                <mat-datepicker-toggle matSuffix [for]="fecha_recepcion"></mat-datepicker-toggle>
+                <mat-datepicker #fecha_recepcion></mat-datepicker>
             </mat-form-field>
             <mat-form-field class="separacion">
                 <mat-label>Documento</mat-label>
-                <input matInput [matDatepicker]="documento" formControlName="Documento">
-                <mat-datepicker-toggle matSuffix [for]="documento"></mat-datepicker-toggle>
-                <mat-datepicker #documento></mat-datepicker>
+                <input matInput [matDatepicker]="fecha_documento" formControlName="fecha_documento">
+                <mat-datepicker-toggle matSuffix [for]="fecha_documento"></mat-datepicker-toggle>
+                <mat-datepicker #fecha_documento></mat-datepicker>
             </mat-form-field>
             <div>
                 <button mat-button matStepperPrevious>Anterior</button>
@@ -38,11 +38,21 @@
             <ng-template matStepLabel>Remitente</ng-template>
             <mat-form-field>
                 <mat-label>Dirigido</mat-label>
-                <input matInput formControlName="Dirigido" placeholder="dirigido/ enviado">
+                <input matInput formControlName="dirigido_a" placeholder="dirigido_a" [matAutocomplete]="dirigido_a">
+                <mat-autocomplete autoActiveFirstOption #dirigido_a="matAutocomplete">
+                    <mat-option *ngFor="let optionsDirigido of filteredDirigido | async" [value]="optionsDirigido">
+                        {{optionsDirigido}}
+                    </mat-option>
+                </mat-autocomplete>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field class="separacion">
                 <mat-label>Enviado</mat-label>
-                <input matInput formControlName="Enviado" placeholder="dirigido/ enviado">
+                <input matInput formControlName="enviado_por" placeholder="Enviado" [matAutocomplete]="enviado_por">
+                <mat-autocomplete autoActiveFirstOption #enviado_por="matAutocomplete">
+                    <mat-option *ngFor="let optionsEnviado of filteredEnviado | async" [value]="optionsEnviado">
+                        {{optionsEnviado}}
+                    </mat-option>
+                </mat-autocomplete>
             </mat-form-field>
             <div>
                 <button mat-button matStepperPrevious>Anterior</button>
@@ -53,11 +63,11 @@
             <ng-template matStepLabel>Descripcion</ng-template>
             <mat-form-field>
                 <mat-label>Asunto</mat-label>
-                <input matInput formControlName="Asunto" placeholder="Asunto/Observaciones">
+                <input matInput formControlName="asunto" placeholder="Asunto/Observaciones">
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field class="separacion">
                 <mat-label>Observaciones</mat-label>
-                <input matInput formControlName="Observaciones" placeholder="Asunto/Observaciones">
+                <input matInput formControlName="observaciones" placeholder="Asunto/Observaciones">
             </mat-form-field>
             <div>
                 <button mat-button matStepperPrevious>Anterior</button>

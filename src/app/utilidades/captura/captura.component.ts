@@ -1,8 +1,8 @@
 import {  Component,  OnInit,  Inject,  Output,  EventEmitter,  Input,} from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder,  FormGroup,  Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { asuntoCreacionDTO } from '../../asunto/asunto';
+import { contactosDTO } from '../select';
 
 @Component({
   selector: 'app-captura',
@@ -11,10 +11,14 @@ import { asuntoCreacionDTO } from '../../asunto/asunto';
 })
 export class CapturaComponent implements OnInit {
   constructor(
-    private router: Router,
     private formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: { id: number }
   ) {}
+
+  listDirigidos:contactosDTO[]=[
+    {id_contacto:12, nombre:'RAUL RODRIGUEZ'},
+    {id_contacto:167, nombre:'MARTÍN VALDÉS RODRÍGUEZ'},
+  ]
 
   form: FormGroup;
 
@@ -32,6 +36,7 @@ export class CapturaComponent implements OnInit {
           validators: [Validators.required, Validators.minLength(6)],
         },
       ],
+      nombreDirigido:[0],
     });
 
     if (this.modelo !== undefined) {
@@ -48,6 +53,7 @@ export class CapturaComponent implements OnInit {
     }
     return '';
   }
+  
   guardarAsuntos() {
     this.submit.emit(this.form.value);
   }

@@ -1,3 +1,8 @@
 button {
     margin: .7rem;
 }
+
+h2,
+.centrar {
+    text-align: center;
+}

@@ -18,7 +18,10 @@ import { ParticularComponent } from './particular/particular/particular.componen
 import { CapturaComponent } from './utilidades/captura/captura.component';
 import { CrearAsuntoComponent } from './asunto/crear-asunto/crear-asunto.component';
 import { EditarAsuntoComponent } from './asunto/editar-asunto/editar-asunto.component';
-import { ConsultarAsuntoComponent } from './asunto/consultar-asunto/consultar-asunto.component'
+import { ConsultarAsuntoComponent } from './asunto/consultar-asunto/consultar-asunto.component';
+import { ConsultarComponent } from './utilidades/consultar/consultar.component';
+import { CrearComponent } from './utilidades/crear/crear.component';
+import { CapturaMinutarioComponent } from './utilidades/captura-minutario/captura-minutario.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { ConsultarAsuntoComponent } from './asunto/consultar-asunto/consultar-as
     CapturaComponent,
     CrearAsuntoComponent,
     EditarAsuntoComponent,
-    ConsultarAsuntoComponent
+    ConsultarAsuntoComponent,
+    ConsultarComponent,
+    CrearComponent,
+    CapturaMinutarioComponent
   ],
   imports: [
     BrowserModule,
