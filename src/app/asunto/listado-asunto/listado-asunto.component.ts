@@ -39,7 +39,7 @@ export class ListadoAsuntoComponent implements OnInit {
     'opciones',
     'archivo_digital',
     'dirigido_a',
-    'enviadio_por',
+    'enviado_por',
     'asunto',
     'detalle',
   ];

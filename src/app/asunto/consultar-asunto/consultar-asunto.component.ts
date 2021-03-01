@@ -77,9 +77,9 @@ export class ConsultarAsuntoComponent implements OnInit {
     this.filteredEnviado=this.formularios.valueChanges.pipe(
       startWith(''),
       map((enviado)=>this._filteredEnviado(enviado))
-    )
-    for (let index = 0; index < this.consultarAsuntos[0].length; index++) {
-      this.optionsEnviado.push(this.consultarAsuntos[0][index]['enviado_por']);
+    ) 
+    for (let index = 0; index < this.listDirigidos.length; index++) {
+      this.optionsEnviado.push(this.listDirigidos[index]['nombre']);
     }
   }
   private _filter(value: any): string[] {
@@ -99,9 +99,9 @@ export class ConsultarAsuntoComponent implements OnInit {
   private _filteredEnviado(value:any): string[]{
     const filterValue = value;
     return this.optionsEnviado.filter(
-      (option)=> option.indexOf(filterValue.enviado_por)
+      (option)=> option.indexOf(filterValue.enviado_por)===0
     )
-  }
+  } 
 
   limpiar() {
     this.formularios.patchValue(this.formularioOriginal);
@@ -113,17 +113,17 @@ export class ConsultarAsuntoComponent implements OnInit {
       ));
     }
     if (valores.dirigido_a) {
-      console.log(valores.dirigido_a)
-      this.filtrarAsuntos.emit ( this.asuntos[0].filter(
-        (asunto) =>
-          asunto.dirigido_a.includes(valores.dirigido_a) 
-      ));
+      
+      this.filtrarAsuntos.emit (this.asuntos[0].filter(
+        (asunto) => asunto.dirigido_a.includes(valores.dirigido_a) 
+      )); 
     } 
 
-    if (valores.Enviado) {
+    if (valores.enviado_por) {
+      console.log(valores.enviado_por)
       this.filtrarAsuntos.emit( this.asuntos[0].filter(
         (asunto) => asunto.enviado_por.includes(valores.enviado_por) 
-      ));
+      )); 
     }
     
     if (valores.Asunto) {

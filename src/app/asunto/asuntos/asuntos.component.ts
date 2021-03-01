@@ -29,8 +29,12 @@ export class AsuntosComponent implements OnInit {
     this.consulta = true;
   }
   filtroListado(event) {
-    this.asuntos=event
-     
+    if (event){
+      this.asuntos=event
+    }else{
+      this.asuntos
+    }
+   // this.asuntos=event
   }
   ngOnInit(): void {
     this.asuntos = [
@@ -39,8 +43,8 @@ export class AsuntosComponent implements OnInit {
         no_docto_original: 'SEFIN/050/2021',
         fecha_recepcion:new Date('2021-02-10') ,
         fecha_documento: new Date('2021-02-09'),
-        dirigido_a: 3963,
-        enviadio_por: 3088,
+        dirigido_a: 'GERARDO BERLANGA GOTES',
+        enviado_por: 'MARTÍN VALDÉS RODRÍGUEZ',
         asunto:
           'EN RELACION AL PROYECTO DENOMINADO "BRT CORRERDOR...',
         observaciones: '',
@@ -66,8 +70,8 @@ export class AsuntosComponent implements OnInit {
         no_docto_original: 'CEAS-DG-DD/0042/2021',
         fecha_recepcion:new Date('2021-02-10') ,
         fecha_documento: new Date('2021-02-10'),
-        dirigido_a: 3963,
-        enviadio_por: 3451,
+        dirigido_a: 'RAUL RODRIGUEZ',
+        enviado_por: 'MARTÍN VALDÉS RODRÍGUEZ',
         asunto:
           'INFORMA QUE SE LLEVARA A CABO LA SESION EXTRARORIDNARIA...',
         observaciones: '',
