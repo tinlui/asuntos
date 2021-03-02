@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CapturaMinutarioComponent } from 'src/app/utilidades/captura-minutario/captura-minutario.component';
+import { CrearComponent } from '../../utilidades/crear/crear.component';
 
 
 @Component({
@@ -15,21 +15,21 @@ export class ParticularComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   openDialog() {
-    this.dialog.open(CapturaMinutarioComponent);
+    this.dialog.open(CrearComponent);
   }
   ngOnInit(): void {
     this.minutarioSecretarioParticular= [{
       opciones: 'modificar/eliminar',
       fecha: new Date(),
       consecutivo: 'sein/ds/sp/225/2020',
-      dirigido: 'Alma Celina Moreira Cañedo',
+      dirigido_a: 'Alma Celina Moreira Cañedo',
       asunto: 'OFICIO DE COMISIÓN PARA EL 08 AL 10 DE DICIEMBRE 2020 A MONCLOVA, SAN BUENAVENTURA, CUATROCIENEGAS, PIEDRAS NEGRAS, ALLENDE, SABINAS COAHUILA',
       solicita: 'Emilio Ortega Cabada'
     },{
       opciones: 'modificar/eliminar',
       fecha: new Date(),
       consecutivo: 'sein/ds/sp/224/2020',
-      dirigido: 'Diego A, Cardona Rangel',
+      dirigido_a: 'Diego A, Cardona Rangel',
       asunto: 'OFICIO DE COMISIN PARA EL 08 AL 10 DE DICIEMBRE 2020 A MONCLOVA CUATROCIENEGAS Y PIEDRAS NEGRAS ',
       solicita: 'Emilio Ortega Cabada' 
     }]

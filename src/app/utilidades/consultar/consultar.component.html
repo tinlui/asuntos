@@ -31,7 +31,7 @@
             <mat-step>
                 <ng-template matStepLabel>Dirigido</ng-template>
                 <mat-form-field>
-                    <input matInput placeholder="Dirigido" formControlName="dirigido" [matAutocomplete]="dirigido">
+                    <input matInput placeholder="Dirigido" formControlName="dirigido_a" [matAutocomplete]="dirigido">
                     <mat-autocomplete autoActiveFirstOption #dirigido="matAutocomplete">
                         <mat-option *ngFor="let option of filteredOptionD | async" [value]="option">
                             {{option}}

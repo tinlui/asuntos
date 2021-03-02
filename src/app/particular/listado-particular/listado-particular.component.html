@@ -15,7 +15,7 @@
             <ng-container matColumnDef="opciones">
                 <th mat-header-cell *matHeaderCellDef> Opciones</th>
                 <td class="detalle" mat-cell *matCellDef="let element">
-                    <button mat-mini-fab color="primary"><mat-icon>create</mat-icon></button>
+                    <button mat-mini-fab color="primary" (click)="editarDialog(element.id)"><mat-icon>create</mat-icon></button>
                     <button mat-mini-fab color="warn"><mat-icon>clear</mat-icon></button>
                 </td>
             </ng-container>

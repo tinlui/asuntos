@@ -1,13 +1,14 @@
 import { Component,  OnInit , Input} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CapturaMinutarioComponent } from '../utilidades/captura-minutario/captura-minutario.component';
+import { CrearComponent } from '../../utilidades/crear/crear.component';
+
 
 @Component({
-  selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.css']
+  selector: 'app-secretario',
+  templateUrl: './secretario.component.html',
+  styleUrls: ['./secretario.component.css']
 })
-export class LandingPageComponent implements OnInit {
+export class SecretarioComponent implements OnInit {
   consulta = false;
   btnConsultar=true;
   btnCerrar=false;
@@ -16,22 +17,33 @@ export class LandingPageComponent implements OnInit {
    
    }
    openDialog() {
-    this.dialog.open(CapturaMinutarioComponent);
+    this.dialog.open(CrearComponent);
   }
+
+  filtroListado(event) {
+    console.log(event)
+    if (event){
+      this.minutarioSecretario=event
+    }else{
+      this.minutarioSecretario
+    }
+   // this.asuntos=event
+  }
+
   title = 'recepcion-documentos';
   ngOnInit(): void {
     this.minutarioSecretario = [{
      
       fecha: new Date(),
       consecutivo: 'sein/ds/770/2020',
-      dirigido: 'Nestor de jesus vasquez chavez',
+      dirigido_a: 'Alma Celina Moreira Cañedo',
       asunto: 'Solicitud de pago de servicio por emision de licencias',
       solicita: 'Emilio Ortega Cabada'
     },{
       
       fecha: new Date(),
       consecutivo: 'sein/ds/767/2020',
-      dirigido: 'Javier Alain Herrera Arroyo',
+      dirigido_a: 'Diego A, Cardona Rangel',
       asunto: 'Comprobacion de Fondo Revolvente Segunda Quincena de Octubre',
       solicita: 'Emilio Ortega Cabada' 
     }]

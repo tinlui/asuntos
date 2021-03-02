@@ -1,4 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditarComponent } from 'src/app/utilidades/editar/editar.component';
 
 @Component({
   selector: 'app-listado-particular',
@@ -7,10 +9,13 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class ListadoParticularComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
   @Input()
   minutarios;
   
+  editarDialog(id: number) {
+    this.dialog.open(EditarComponent, { data: { id } });
+  }
 
   displayColumns: String[] = ["consecutivo","opciones","fecha","asunto","dirigido","solicita"]
   columnas: [

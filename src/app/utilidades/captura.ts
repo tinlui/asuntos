@@ -1,7 +1,7 @@
 export interface capturaCreacionDTO{
-    oficio: string;
+    consecutivo: string;
     fecha: Date;
+    dirigido_a:number;
     asunto: string;
-    dirigido:string;
-    solicita:string;
+    solicita:number;
 }

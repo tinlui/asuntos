@@ -17,9 +17,9 @@ export class CrearComponent implements OnInit {
   ngOnInit(): void {
 
   }
-guardarMinutario(model:capturaCreacionDTO){
+  guardarMinutario(model:capturaCreacionDTO){
 console.log(model);
-this.router.navigate([''])
+
     this.dialogRef.close();
 }
 }

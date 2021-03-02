@@ -1,4 +1,6 @@
 import { Component, Input,OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditarComponent } from 'src/app/utilidades/editar/editar.component';
 
 @Component({
   selector: 'app-listado-minutario',
@@ -7,17 +9,21 @@ import { Component, Input,OnInit } from '@angular/core';
 })
 export class ListadoMinutarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   @Input()
   minutarios;
   
-displayColumns: String[] = ["consecutivo","opciones","fecha","asunto","dirigido","solicita"]
+  editarDialog(id: number) {
+    this.dialog.open(EditarComponent, { data: { id } });
+  }
+
+displayColumns: String[] = ["consecutivo","opciones","fecha","asunto","dirigido_a","solicita"]
   columnas: [
     {titulo: "Consecutivo" , name: "consecutivo"},
     {titulo: "Opciones" , name: "opciones"},
     {titulo: "Asunto" , name: "asunto"},
-    {titulo: "Dirigido" , name: "dirigido"},
+    {titulo: "Dirigido" , name: "dirigido_a"},
     {titulo: "Fecha" , name: "fecha"},
     {titulo: "Solicita" , name: "solicita"},    
   ]

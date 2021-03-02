@@ -120,7 +120,7 @@ export class ConsultarAsuntoComponent implements OnInit {
     } 
 
     if (valores.enviado_por) {
-      console.log(valores.enviado_por)
+      
       this.filtrarAsuntos.emit( this.asuntos[0].filter(
         (asunto) => asunto.enviado_por.includes(valores.enviado_por) 
       )); 

@@ -31,7 +31,6 @@ export class CapturaComponent implements OnInit {
   
  
   ngOnInit(): void {
-    console.log(this.editar)
     this.form = this.formBuilder.group({
       no_docto_original: [
         '',

@@ -11,7 +11,7 @@ import { ListadoMinutarioComponent } from './minutario/listado-minutario/listado
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
 import { MenuComponent } from './menu/menu.component';
 import { ListadoAsuntoComponent } from './asunto/listado-asunto/listado-asunto.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SecretarioComponent } from './minutario/secretario/secretario.component';
 import { AsuntosComponent } from './asunto/asuntos/asuntos.component';
 import { ListadoParticularComponent } from './particular/listado-particular/listado-particular.component';
 import { ParticularComponent } from './particular/particular/particular.component';
@@ -22,7 +22,9 @@ import { ConsultarAsuntoComponent } from './asunto/consultar-asunto/consultar-as
 import { ConsultarComponent } from './utilidades/consultar/consultar.component';
 import { CrearComponent } from './utilidades/crear/crear.component';
 import { CapturaMinutarioComponent } from './utilidades/captura-minutario/captura-minutario.component';
-import { InputImgComponent } from './utilidades/input-img/input-img.component'
+import { InputImgComponent } from './utilidades/input-img/input-img.component';
+import { EditarComponent } from './utilidades/editar/editar.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { InputImgComponent } from './utilidades/input-img/input-img.component'
     ListadoGenericoComponent,
     MenuComponent,
     ListadoAsuntoComponent,
-    LandingPageComponent,
+    SecretarioComponent,
     AsuntosComponent,
     ListadoParticularComponent,
     ParticularComponent,
@@ -42,7 +44,8 @@ import { InputImgComponent } from './utilidades/input-img/input-img.component'
     ConsultarComponent,
     CrearComponent,
     CapturaMinutarioComponent,
-    InputImgComponent
+    InputImgComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,

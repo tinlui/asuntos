@@ -14,7 +14,6 @@
         </tr>
     </table>
     <app-consultar-asunto (filtrarAsuntos)='filtroListado($event)' [consultarAsuntos]="[asuntos]" *ngIf="consulta" class="consulta"></app-consultar-asunto>
-
 </ng-container>
 
 <app-listado-asunto [asuntos]="asuntos"></app-listado-asunto>
