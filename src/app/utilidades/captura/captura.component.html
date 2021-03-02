@@ -6,7 +6,7 @@
     <p>
         <mat-form-field class="textarea">
             <mat-label>No. Documento</mat-label>
-            <input formControlName="noOficio" matInput placeholder="SIDUM/000/2021">
+            <input formControlName="no_docto_original" matInput placeholder="SIDUM/000/2021">
             <mat-hint>Original</mat-hint>
             <mat-error *ngIf="form.invalid">{{errorNoOficio()}}</mat-error>
         </mat-form-field>
@@ -14,23 +14,23 @@
     <p>
         <mat-form-field class="textarea">
             <mat-label>Recepcion</mat-label>
-            <input matInput [matDatepicker]="recepcion">
-            <mat-datepicker-toggle matSuffix [for]="recepcion"></mat-datepicker-toggle>
-            <mat-datepicker #recepcion></mat-datepicker>
+            <input matInput formControlName="fecha_recepcion" [matDatepicker]="fecha_recepcion">
+            <mat-datepicker-toggle matSuffix [for]="fecha_recepcion"></mat-datepicker-toggle>
+            <mat-datepicker #fecha_recepcion></mat-datepicker>
         </mat-form-field>
     </p>
     <p>
         <mat-form-field class="textarea">
             <mat-label>Documento</mat-label>
-            <input matInput [matDatepicker]="documento">
-            <mat-datepicker-toggle matSuffix [for]="documento"></mat-datepicker-toggle>
-            <mat-datepicker #documento></mat-datepicker>
+            <input matInput formControlName="fecha_Documento" [matDatepicker]="fecha_Documento">
+            <mat-datepicker-toggle matSuffix [for]="fecha_Documento"></mat-datepicker-toggle>
+            <mat-datepicker #fecha_Documento></mat-datepicker>
         </mat-form-field>
     </p>
     <p>
         <mat-form-field class="textarea">
             <mat-label>Dirigido a:</mat-label>
-            <mat-select formControlName="nombreDirigido" name="dirigido">
+            <mat-select formControlName="dirigido_a" name="dirigido">
                 <mat-option>None</mat-option>
                 <mat-option *ngFor="let list of listDirigidos" [value]="list.id_contacto">{{list.nombre}}</mat-option>
             </mat-select>
@@ -39,29 +39,30 @@
     <p>
         <mat-form-field class="textarea">
             <mat-label>Enviado por:</mat-label>
-            <mat-select>
-                <mat-option value="one">First option</mat-option>
-                <mat-option value="two">Second option</mat-option>
+            <mat-select formControlName="enviado_por" name="enviado">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let list of listDirigidos" [value]="list.id_contacto">{{list.nombre}}</mat-option>
             </mat-select>
         </mat-form-field>
     </p>
     <p>
         <mat-form-field class="textarea">
             <mat-label>Asunto</mat-label>
-            <textarea matInput></textarea>
+            <textarea formControlName="asunto" matInput></textarea>
         </mat-form-field>
     </p>
     <p>
         <mat-form-field class="textarea">
             <mat-label>Observaciones</mat-label>
-            <textarea matInput></textarea>
+            <textarea formControlName="observaciones" matInput></textarea>
         </mat-form-field>
     </p>
     <p>
-        <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="1">Original</mat-radio-button>
-            <mat-radio-button value="2">Copia</mat-radio-button>
-        </mat-radio-group>
+        <app-input-img (archivoSel)="archivoPDF($event)"></app-input-img>
+    </p>
+    <p>
+        <mat-checkbox formControlName="original">Original</mat-checkbox>
+        <mat-checkbox formControlName="copia">Copia</mat-checkbox>
     </p>
     <div class="botones">
         <button mat-raised-button color="primary" [disabled]="form.invalid">

@@ -1,7 +1,7 @@
 import {  Component,  OnInit,  Inject,  Output,  EventEmitter,  Input,} from '@angular/core';
 import { FormBuilder,  FormGroup,  Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { asuntoCreacionDTO } from '../../asunto/asunto';
+import { asuntoCreacionDTO, asuntoDTO } from '../../asunto/asunto';
 import { contactosDTO } from '../select';
 
 @Component({
@@ -22,29 +22,40 @@ export class CapturaComponent implements OnInit {
 
   form: FormGroup;
 
+  
   @Input()
-  modelo: asuntoCreacionDTO;
+  editar: asuntoDTO;
 
   @Output()
   submit: EventEmitter<asuntoCreacionDTO> = new EventEmitter<asuntoCreacionDTO>();
-
+  
+ 
   ngOnInit(): void {
+    console.log(this.editar)
     this.form = this.formBuilder.group({
-      noOficio: [
+      no_docto_original: [
         '',
         {
           validators: [Validators.required, Validators.minLength(6)],
         },
-      ],
-      nombreDirigido:[0],
+      ], 
+      fecha_recepcion: [''],
+      fecha_Documento: [''],
+      dirigido_a:[0],
+      enviado_por:[0],
+      asunto: [''],
+  observaciones:[''],
+  original:[0],
+  copia:[0],
+  archivo_digital:['']
     });
 
-    if (this.modelo !== undefined) {
-      this.form.patchValue(this.modelo);
+    if (this.editar !== undefined) {
+      this.form.patchValue(this.editar);
     }
   }
   errorNoOficio() {
-    var campo = this.form.get('noOficio');
+    var campo = this.form.get('no_docto_original');
     if (campo.hasError('required')) {
       return 'El campo es requerido';
     }
@@ -52,6 +63,9 @@ export class CapturaComponent implements OnInit {
       return 'Longitud minima es de 6';
     }
     return '';
+  }
+  archivoPDF(archivo:File){
+    this.form.get('archivo_digital').setValue(archivo);
   }
   
   guardarAsuntos() {

@@ -21,7 +21,8 @@ import { EditarAsuntoComponent } from './asunto/editar-asunto/editar-asunto.comp
 import { ConsultarAsuntoComponent } from './asunto/consultar-asunto/consultar-asunto.component';
 import { ConsultarComponent } from './utilidades/consultar/consultar.component';
 import { CrearComponent } from './utilidades/crear/crear.component';
-import { CapturaMinutarioComponent } from './utilidades/captura-minutario/captura-minutario.component'
+import { CapturaMinutarioComponent } from './utilidades/captura-minutario/captura-minutario.component';
+import { InputImgComponent } from './utilidades/input-img/input-img.component'
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CapturaMinutarioComponent } from './utilidades/captura-minutario/captur
     ConsultarAsuntoComponent,
     ConsultarComponent,
     CrearComponent,
-    CapturaMinutarioComponent
+    CapturaMinutarioComponent,
+    InputImgComponent
   ],
   imports: [
     BrowserModule,

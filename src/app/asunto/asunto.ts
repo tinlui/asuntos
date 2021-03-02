@@ -1,4 +1,5 @@
-export interface asuntoCreacionDTO{
+export interface asuntoDTO{
+    no_identificacion:number;
     no_docto_original: string;
     fecha_recepcion: Date;
     fecha_Documento: Date;
@@ -8,4 +9,20 @@ export interface asuntoCreacionDTO{
     observaciones:string;
     original:number;
     copia:number;
+    archivo_digital:string;
+}
+
+
+export interface asuntoCreacionDTO{
+    no_identificacion:number;
+    no_docto_original: string;
+    fecha_recepcion: Date;
+    fecha_Documento: Date;
+    dirigido_a: number;
+    enviado_por: number;
+    asunto: string;
+    observaciones:string;
+    original:number;
+    copia:number;
+    archivo_digital:File;
 }

@@ -29,6 +29,7 @@ export class AsuntosComponent implements OnInit {
     this.consulta = true;
   }
   filtroListado(event) {
+    
     if (event){
       this.asuntos=event
     }else{
