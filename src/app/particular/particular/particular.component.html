@@ -7,5 +7,5 @@
         <button mat-raised-button>Reportes</button>
     </div>
 </ng-container>
-<app-consultar [consulta]="minutarioSecretarioParticular" *ngIf="consulta"></app-consultar>
+<app-consultar (filtrarConsulta)='filtroListado($event)' [consulta]="minutarioSecretarioParticular" *ngIf="consulta"></app-consultar>
 <app-listado-particular [minutarios]="minutarioSecretarioParticular"></app-listado-particular>

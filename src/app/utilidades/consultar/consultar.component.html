@@ -1,73 +1,71 @@
-<div class="centrar">
-    <form [formGroup]="formulario" class="consultar">
+<form [formGroup]="formulario" class="consultar">
 
-        <mat-horizontal-stepper #stepper>
-            <mat-step>
-                <ng-template matStepLabel>Oficio</ng-template>
-                <mat-form-field>
-                    <mat-label>No. Documento</mat-label>
-                    <input matInput placeholder="SIDUM/00/2021" formControlName="consecutivo" [matAutocomplete]="consecutivo">
-                    <mat-autocomplete autoActiveFirstOption #consecutivo="matAutocomplete">
-                        <mat-option *ngFor="let option of filteredOptionC | async" [value]="option">
-                            {{option}}
-                        </mat-option>
-                    </mat-autocomplete>
-                </mat-form-field>
-                <div>
-                    <button mat-button matStepperNext>Siguiente</button>
-                </div>
-            </mat-step>
-            <mat-step>
-                <ng-template matStepLabel>Asunto</ng-template>
-                <mat-form-field>
-                    <mat-label>Asunto</mat-label>
-                    <input matInput placeholder="Asunto" formControlName="asunto">
-                </mat-form-field>
-                <div>
-                    <button mat-button matStepperPrevious>Anterior</button>
-                    <button mat-button matStepperNext>Siguiente</button>
-                </div>
-            </mat-step>
-            <mat-step>
-                <ng-template matStepLabel>Dirigido</ng-template>
-                <mat-form-field>
-                    <input matInput placeholder="Dirigido" formControlName="dirigido_a" [matAutocomplete]="dirigido">
-                    <mat-autocomplete autoActiveFirstOption #dirigido="matAutocomplete">
-                        <mat-option *ngFor="let option of filteredOptionD | async" [value]="option">
-                            {{option}}
-                        </mat-option>
-                    </mat-autocomplete>
-                </mat-form-field>
-                <div>
-                    <button mat-button matStepperPrevious>Anterior</button>
-                    <button mat-button matStepperNext>Siguiente</button>
-                </div>
-            </mat-step>
-            <mat-step>
-                <ng-template matStepLabel>Solicita</ng-template>
-                <mat-form-field>
-                    <mat-label>No. Documento</mat-label>
-                    <input matInput placeholder="SIDUM/00/2021" formControlName="solicita" [matAutocomplete]="solicita">
-                    <mat-autocomplete autoActiveFirstOption #solicita="matAutocomplete">
-                        <mat-option *ngFor="let option of filteredOptionS | async" [value]="option">
-                            {{option}}
-                        </mat-option>
-                    </mat-autocomplete>
-                </mat-form-field>
-                <div>
-                    <button mat-button matStepperPrevious>Anterior</button>
-                    <button mat-button matStepperNext>Siguiente</button>
-                </div>
-            </mat-step>
-            <mat-step>
-                <ng-template matStepLabel>Terminar</ng-template>
-                <p>You are now done.</p>
-                <div>
-                    <button mat-button matStepperPrevious>Anterior</button>
-                    <button mat-button (click)="stepper.reset()">Ocultar</button>
-                </div>
-            </mat-step>
-        </mat-horizontal-stepper>
+    <mat-horizontal-stepper #stepper>
+        <mat-step>
+            <ng-template matStepLabel>Oficio</ng-template>
+            <mat-form-field>
+                <mat-label>No. Documento</mat-label>
+                <input matInput placeholder="SIDUM/00/2021" formControlName="consecutivo" [matAutocomplete]="consecutivo">
+                <mat-autocomplete autoActiveFirstOption #consecutivo="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptionC | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Asunto</ng-template>
+            <mat-form-field>
+                <mat-label>Asunto</mat-label>
+                <input matInput placeholder="Asunto" formControlName="asunto">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Anterior</button>
+                <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Dirigido</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="Dirigido" formControlName="dirigido_a" [matAutocomplete]="dirigido">
+                <mat-autocomplete autoActiveFirstOption #dirigido="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptionD | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Anterior</button>
+                <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Solicita</ng-template>
+            <mat-form-field>
+                <mat-label>No. Documento</mat-label>
+                <input matInput placeholder="SIDUM/00/2021" formControlName="solicita" [matAutocomplete]="solicita">
+                <mat-autocomplete autoActiveFirstOption #solicita="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptionS | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Anterior</button>
+                <button mat-button matStepperNext>Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Terminar</ng-template>
+            <p>You are now done.</p>
+            <div>
+                <button mat-button matStepperPrevious>Anterior</button>
+                <button mat-button (click)="stepper.reset()">Ocultar</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
 
-    </form>
-</div>
+</form>

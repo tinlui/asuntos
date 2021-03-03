@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { FormBuilder, Validators } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { CrearAsuntoComponent } from '../crear-asunto/crear-asunto.component';
 
@@ -18,7 +17,7 @@ import { CrearAsuntoComponent } from '../crear-asunto/crear-asunto.component';
 export class AsuntosComponent implements OnInit {
   consulta = false;
   
-  constructor(public dialog: MatDialog, private _formBuilder: FormBuilder) {}
+  constructor(public dialog: MatDialog) {}
 
   openDialog() {
     this.dialog.open(CrearAsuntoComponent);
@@ -28,8 +27,8 @@ export class AsuntosComponent implements OnInit {
   consultaAsunto() {
     this.consulta = true;
   }
+
   filtroListado(event) {
-    
     if (event){
       this.asuntos=event
     }else{

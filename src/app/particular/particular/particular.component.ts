@@ -17,6 +17,17 @@ export class ParticularComponent implements OnInit {
   openDialog() {
     this.dialog.open(CrearComponent);
   }
+
+  filtroListado(event) {
+    
+    console.log(event)
+    if (event){
+      this.minutarioSecretarioParticular=event
+    }else{
+      this.minutarioSecretarioParticular
+    }
+
+  }
   ngOnInit(): void {
     this.minutarioSecretarioParticular= [{
       opciones: 'modificar/eliminar',

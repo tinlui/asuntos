@@ -21,13 +21,14 @@ export class SecretarioComponent implements OnInit {
   }
 
   filtroListado(event) {
+    
     console.log(event)
     if (event){
       this.minutarioSecretario=event
     }else{
       this.minutarioSecretario
     }
-   // this.asuntos=event
+
   }
 
   title = 'recepcion-documentos';

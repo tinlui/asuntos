@@ -17,12 +17,12 @@ export class ListadoParticularComponent implements OnInit {
     this.dialog.open(EditarComponent, { data: { id } });
   }
 
-  displayColumns: String[] = ["consecutivo","opciones","fecha","asunto","dirigido","solicita"]
+  displayColumns: String[] = ["consecutivo","opciones","fecha","asunto","dirigido_a","solicita"]
   columnas: [
     {titulo: "Consecutivo" , name: "consecutivo"},
     {titulo: "Opciones" , name: "opciones"},
     {titulo: "Asunto" , name: "asunto"},
-    {titulo: "Dirigido" , name: "dirigido"},
+    {titulo: "Dirigido" , name: "dirigido_a"},
     {titulo: "Fecha" , name: "fecha"},
     {titulo: "Solicita" , name: "solicita"},    
   ]
