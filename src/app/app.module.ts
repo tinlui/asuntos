@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { CrearComponent } from './utilidades/crear/crear.component';
 import { CapturaMinutarioComponent } from './utilidades/captura-minutario/captura-minutario.component';
 import { InputImgComponent } from './utilidades/input-img/input-img.component';
 import { EditarComponent } from './utilidades/editar/editar.component';
+import { IindiceAsuntosComponent } from './asunto/iindice-asuntos/iindice-asuntos.component';
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { EditarComponent } from './utilidades/editar/editar.component';
     CrearComponent,
     CapturaMinutarioComponent,
     InputImgComponent,
-    EditarComponent
+    EditarComponent,
+    IindiceAsuntosComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { EditarComponent } from './utilidades/editar/editar.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

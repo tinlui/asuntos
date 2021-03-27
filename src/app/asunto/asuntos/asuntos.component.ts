@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { CrearAsuntoComponent } from '../crear-asunto/crear-asunto.component';
-
+import { CorespondenciaService } from '../../utilidades/corespondencia.service';
 @Component({
   selector: 'app-asuntos',
   templateUrl: './asuntos.component.html',
@@ -17,7 +17,7 @@ import { CrearAsuntoComponent } from '../crear-asunto/crear-asunto.component';
 export class AsuntosComponent implements OnInit {
   consulta = false;
   
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,private Corespondencia: CorespondenciaService) {}
 
   openDialog() {
     this.dialog.open(CrearAsuntoComponent);
@@ -93,6 +93,11 @@ export class AsuntosComponent implements OnInit {
         idAdministracion:2017
       },
     ];
+    this.Corespondencia.obtenerTodos()
+    .subscribe(contactos=>{
+      console.log(contactos);
+    }, error=> console.error(error));
+   
   }
 
   asuntos;

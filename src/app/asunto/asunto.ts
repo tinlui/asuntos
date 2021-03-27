@@ -26,3 +26,8 @@ export interface asuntoCreacionDTO{
     copia:number;
     archivo_digital:File;
 }
+
+export interface contactosDTO{
+    id_contacto:number;
+    nombre:string;
+    }
